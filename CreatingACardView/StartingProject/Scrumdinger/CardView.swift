@@ -1,3 +1,4 @@
+import Foundation
 import SwiftUI
 
 struct CardView: View {
@@ -6,6 +7,11 @@ struct CardView: View {
         VStack(alignment: .leading) {
             Text(scrum.title)
                 .font(.headline)
+            Spacer()
+            HStack {
+                Label("\(scrum.attendees.count)", systemImage: "person.3")
+                Label("\(scrum.lengthInMinutes)", systemImage: "clock")
+            }
         }
     }
 }
